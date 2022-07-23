@@ -1,6 +1,13 @@
 # KotlinBasicExamples
-Bu repository Udemy' den aldığım Kasım Adalan' ın kotlin kursunda bize verdiği ödevleri göstermek için oluşturdum.
-
+Bu repository de Udemy' den aldığım Kasım Adalan' ın kotlin kursunda verilmiş olan ödevleri çözümlerimle göstermek istedim.
+```
+* Fahrenhiet Dönüştürme
+* Dikdörtgen Çevre Hesaplama
+* Kaftöriyel Hesaplama
+* Kelimede Harf Sayısı Bulma
+* Maaş Hesabı
+* İnternet Kota Hesabı
+```
 <details><summary>Ödev1</summary>
 <p>
 
@@ -40,7 +47,6 @@ fun main(){
 Sıcaklığı giriniz : 
 32
 Fahrenhiet Dönüşümü :  89.6
-
 ```
 </p>
 </details>
@@ -91,7 +97,6 @@ Fahrenhiet Dönüşümü :  89.6
 Küçük kenarı giriniz : 
 20
 Dikdörtgenin çevresi :  110
-
  ```
  </p>
 </details>
@@ -128,7 +133,6 @@ fun main(){
 Sayıyı giriniz : 
 6
 6' nın faktöriyeli : 720
-
 ```
 </p>
 </details>
@@ -136,5 +140,225 @@ Sayıyı giriniz :
 <details><summary>Ödev4</summary>
 <p>
 
--> Sayının fatöriyel değerini hesaplayıp geri döndüren metodu yazınız.
+-> Girilen kelimede belirtilen harfin kaç defa tekrar ettiğini döndüren metod yazınız.
+
 ```
+class Letters {
+
+    fun findLetters(word : String, letter : Char) : Int{
+
+        var counter = 0
+        for(i in word){
+            if (i == letter){
+                counter++
+            }
+
+        }
+        return counter
+    }
+}
+```
+
+```
+fun main(){
+
+    val e4 = Letters()
+
+    val input = Scanner(System.`in`)
+
+    println("Kelimeyi giriniz : ")
+
+    val word = input.next()
+
+    println("Harfi giriniz : ")
+
+    val letter = input.next()[0]
+
+    val result = e4.findLetters(word, letter)
+
+    println("$letter harfi $result defa kullanılmıştır.")
+}
+```
+**Çıktı**
+
+```
+Kelimeyi giriniz : 
+papatya
+Harfi giriniz : 
+p
+p harfi 2 defa kullanılmıştır.
+```
+
+</p>
+</details>
+
+<details><summary>Ödev5</summary>
+<p>
+
+-> Girilen gün sayısına göre maaş hesabı yapan ve elde edilen değeri geri döndüren metodu yazınız.
+               
+                     1 günde sekiz saat çalışılabilir.
+                     Çalışma saati ücreti : 10 TL 
+                     Mesai saati ücreti : 20 TL
+                     160 saat üzeri mesai sayılır.
+                     
+ ```                    
+class DailySalary {
+
+    fun salaryCalculation(day : Int): Int {
+
+        var hours = day * 8
+
+        var salary = 0
+
+        if (hours < 160){
+
+            salary = hours * 10
+
+        }else{
+
+            salary = (hours - 160) * 20 + 160 * 10
+        }
+
+        return salary
+    }
+}
+```
+
+```
+fun main(){
+
+    val e5 = DailySalary()
+
+    val input = Scanner(System.`in`)
+
+    println("Kaç gün çalıştınız ? ")
+
+    val day = input.nextInt()
+
+    val result = e5.salaryCalculation(day)
+
+    println("Maaşınız $result tl' dir.")
+}
+```
+
+**Çıktı**
+```
+Kaç gün çalıştınız ? 
+40
+Maaşınız 4800 tl' dir.
+```
+
+</p>
+</details>
+
+<details><summary>Ödev6</summary>
+<p>
+
+-> Girilen kota miktarına göre ücreti hesaplayarak geri döndüren metodu yazınız.               
+                    
+                     50GB 100 TL 
+                     Kota aşımından sonra her 1GB 4 TL
+
+```
+class InternetQuota {
+
+    fun quotaCalculation(quota: Int) : Int{
+
+        var payment = 0
+
+        if (quota < 50){
+            print("Hatalı kota girdiniz.")
+        }else if (quota == 50){
+            payment = 100
+        }else{
+            println("Muşteriniz bu ay ${quota - 50} GB aşım yapmıştır.")
+            payment = (quota - 50) * 4 + 100
+        }
+            return payment
+    }
+}
+```
+
+```
+fun main(){
+
+    val e6 = InternetQuota()
+
+    val input = Scanner(System.`in`)
+
+    println("Müşteriniz kaç GB kullanmış ? ")
+
+    val quota = input.nextInt()
+
+    val result = e6.quotaCalculation(quota)
+
+
+    println("Ödenecek tutar $result tl' dir.")
+}
+```
+
+**Çıktı**
+```
+Müşteriniz kaç GB kullanmış ? 
+82
+Muşteriniz bu ay 32 GB aşım yapmıştır.
+Ödenecek tutar 228 tl' dir.
+```
+</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
