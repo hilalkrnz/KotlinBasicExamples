@@ -1,9 +1,9 @@
 # KotlinBasicExamples
 Bu repository de Udemy' den aldığım Kasım Adalan' ın kotlin kursunda verilmiş olan ödevleri çözümlerimle göstermek istedim.
 ```
-* Fahrenhiet Dönüştürme
+* Fahrenheit Dönüştürme
 * Dikdörtgen Çevre Hesaplama
-* Kaftöriyel Hesaplama
+* Faktöriyel Hesaplama
 * Kelimede Harf Sayısı Bulma
 * Maaş Hesabı
 * İnternet Kota Hesabı
@@ -11,10 +11,10 @@ Bu repository de Udemy' den aldığım Kasım Adalan' ın kotlin kursunda verilm
 <details><summary>Ödev1</summary>
 <p>
 
- -> Kullanıcıdan alınan sıcaklık değerini Fahrenhiet' a dönüştüren metod yazınız.
+ -> Kullanıcıdan alınan sıcaklık değerini Fahrenheit' a dönüştüren metod yazınız.
   
   ```
-  class Fahrenhiet {
+  class Fahrenheit {
 
     fun convert(temprature : Double): Double{
         val result = temprature * (1.8) + 32
@@ -27,7 +27,7 @@ Bu repository de Udemy' den aldığım Kasım Adalan' ın kotlin kursunda verilm
 ```
 fun main(){
 
-    val e1 = Fahrenhiet()
+    val e1 = Fahrenheit()
 
     val input = Scanner(System.`in`)
 
@@ -37,7 +37,7 @@ fun main(){
 
     val result = e1.convert(temprature)
 
-    println("Fahrenhiet Dönüşümü :  $result")
+    println("Fahrenheit Dönüşümü :  $result")
 
 }
 ```
@@ -46,7 +46,7 @@ fun main(){
 ```
 Sıcaklığı giriniz : 
 32
-Fahrenhiet Dönüşümü :  89.6
+Fahrenheit Dönüşümü :  89.6
 ```
 </p>
 </details>
@@ -104,7 +104,7 @@ Dikdörtgenin çevresi :  110
 <details><summary>Ödev3</summary>
 <p>
 
--> Sayının fatöriyel değerini hesaplayıp geri döndüren metodu yazınız.
+-> Sayının faktöriyel değerini hesaplayıp geri döndüren metodu yazınız.
 ```
 fun main(){
 
